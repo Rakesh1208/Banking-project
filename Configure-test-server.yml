@@ -7,7 +7,7 @@
     command: sudo apt-get update
 
   - name: install docker 
-    command: sudo apt install docker.io -y
+    command: sudo apt install docker.io 
 
   - name: docker stop
     command: sudo docker stop banking
