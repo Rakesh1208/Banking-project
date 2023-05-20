@@ -1,0 +1,19 @@
+---
+- hosts: test-server
+  become: true
+  tasks:
+
+  - name: update the system
+    command: sudo apt-get update
+
+  - name: install docker 
+    command: sudo apt install docker.io -y
+
+  - name: docker stop
+    command: sudo docker stop banking
+
+  - name: docker remove
+    command: sudo docker rm banking
+
+  - name: docker run
+    command: sudo docker run -itd -p 8081:8081 --name banking rakesh1299/banking:1.0
